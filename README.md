@@ -16,12 +16,6 @@ This project is an accessible and always-available mirror of the popular **[Reac
 ### Always Up-to-Date
 We strive to keep the library updated. Currently, our platform is synchronized and fully up-to-date with **React Icons v5.6.0**.
 
-### Development Setup (React + Vite)
-To run this project locally:
-
-1. Clone the repository
-2. Install dependencies: `npm install react-icons`
-3. Run the development server: `npm run dev`
 
 ---
 
@@ -36,9 +30,8 @@ To run this project locally:
 ### همیشه بروز هستیم
 ما همواره تلاش می‌کنیم تا جدیدترین آیکون‌ها را در اختیار شما قرار دهیم. در حال حاضر، دیتابیس ما کاملاً بروز بوده و با **نسخه 5.6.0** کتابخانه React Icons همگام‌سازی شده است.
 
-### راه‌اندازی پروژه (React + Vite)
-برای اجرای پروژه روی سیستم خود:
+### راه‌اندازی کتابخانه
+برای اجرای کتابخانه روی سیستم خود:
 
-1. پروژه را Clone کنید.
-2. پکیج‌ها را نصب کنید: `npm install react-icons`
-3. سرور توسعه را اجرا کنید: `npm run dev`
+1. پکیج‌ها را نصب کنید: `npm install react-icons`
+2. سرور توسعه را اجرا کنید: `npm run dev`
