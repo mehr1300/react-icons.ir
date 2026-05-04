@@ -1,0 +1,33 @@
+@import "tailwindcss";
+
+
+@font-face {
+    font-family: Vazirmatn;
+    font-style: normal;
+    font-weight: bold;
+    src: url('assets/fonts/Vazirmatn-FD-Bold.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: Vazirmatn;
+    font-style: normal;
+    font-weight: 300;
+    src: url('assets/fonts/Vazirmatn-FD-Regular.woff2') format('woff2');
+}
+
+
+/* Custom Sleek Scrollbar */
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+}
