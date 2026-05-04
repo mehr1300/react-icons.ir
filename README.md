@@ -1,16 +1,48 @@
-# React + Vite
+فایل `README.md` شما را با ظاهری حرفه‌ای، در دو زبان انگلیسی و فارسی، و با حذف متون پیش‌فرض Vite آماده کرده‌ام. همچنین اطلاعات مربوط به آدرس سایت‌ها و نسخه بروز شده (v5.6.0) در آن گنجانده شده است:
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+```markdown
+# React Icons IR 🇮🇷
 
-Currently, two official plugins are available:
+[![Website](https://img.shields.io/badge/Website-react--icons.ir-blue)](https://react-icons.ir)
+[![React Icons Version](https://img.shields.io/badge/React_Icons-v5.6.0-green)](https://react-icons.github.io/react-icons)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+*(Please scroll down for the Persian version / برای مشاهده نسخه فارسی به پایین صفحه مراجعه کنید)*
 
-## React Compiler
+## 🇬🇧 English
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### About The Project
+This project is an accessible and always-available mirror of the popular **[React Icons](https://react-icons.github.io/react-icons)** library, specifically designed to help Iranian developers bypass internet disruptions and access resources without interruption.
 
-## Expanding the ESLint configuration
+**Live Website:** [https://react-icons.ir](https://react-icons.ir)  
+**Original Reference:** [https://react-icons.github.io/react-icons](https://react-icons.github.io/react-icons)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Always Up-to-Date
+We strive to keep the library updated. Currently, our platform is synchronized and fully up-to-date with **React Icons v5.6.0**.
+
+### Development Setup (React + Vite)
+To run this project locally:
+
+1. Clone the repository
+2. Install dependencies: `npm install`
+3. Run the development server: `npm run dev`
+
+---
+
+## 🇮🇷 فارسی
+
+### درباره پروژه
+این پروژه یک آینه (Mirror) همیشه در دسترس از کتابخانه محبوب **[React Icons](https://react-icons.github.io/react-icons)** است. هدف اصلی این پلتفرم، ایجاد دسترسی پایدار برای برنامه‌نویسان و توسعه‌دهندگان ایرانی است تا در صورت بروز اختلال در اینترنت بین‌المللی، روند توسعه پروژه‌هایشان متوقف نشود.
+
+**آدرس وب‌سایت ما:** [https://react-icons.ir](https://react-icons.ir)  
+**سایت مرجع:** [https://react-icons.github.io/react-icons](https://react-icons.github.io/react-icons)
+
+### همیشه بروز هستیم
+ما همواره تلاش می‌کنیم تا جدیدترین آیکون‌ها را در اختیار شما قرار دهیم. در حال حاضر، دیتابیس ما کاملاً بروز بوده و با **نسخه 5.6.0** کتابخانه React Icons همگام‌سازی شده است.
+
+### راه‌اندازی پروژه (React + Vite)
+برای اجرای پروژه روی سیستم خود:
+
+1. پروژه را Clone کنید.
+2. پکیج‌ها را نصب کنید: `npm install`
+3. سرور توسعه را اجرا کنید: `npm run dev`
+```
