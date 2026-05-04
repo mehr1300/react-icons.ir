@@ -1,4 +1,3 @@
-```markdown
 # React Icons IR 🇮🇷
 
 [![Website](https://img.shields.io/badge/Website-react--icons.ir-blue)](https://react-icons.ir)
@@ -21,7 +20,7 @@ We strive to keep the library updated. Currently, our platform is synchronized a
 To run this project locally:
 
 1. Clone the repository
-2. Install dependencies: `npm install`
+2. Install dependencies: `npm install react-icons`
 3. Run the development server: `npm run dev`
 
 ---
@@ -41,6 +40,5 @@ To run this project locally:
 برای اجرای پروژه روی سیستم خود:
 
 1. پروژه را Clone کنید.
-2. پکیج‌ها را نصب کنید: `npm install`
+2. پکیج‌ها را نصب کنید: `npm install react-icons`
 3. سرور توسعه را اجرا کنید: `npm run dev`
-```
