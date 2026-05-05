@@ -1,4 +1,4 @@
-import { useState, useMemo, useEffect } from "react";
+import { useState, useMemo, useEffect, useRef } from "react";
 import { Link, useParams } from "react-router-dom";
 import { iconCategories, allIconsFlat } from "../iconsData";
 import { FiSearch } from "react-icons/fi";
@@ -7,22 +7,57 @@ export default function Gallery() {
     const { categoryId } = useParams();
     const [searchTerm, setSearchTerm] = useState("");
 
+    const [visibleCount, setVisibleCount] = useState(200);
+    const loaderRef = useRef(null);
+
+
     useEffect(() => {
         setSearchTerm("");
+        setVisibleCount(200);
     }, [categoryId]);
+
+    useEffect(() => {
+        setVisibleCount(200);
+    }, [searchTerm]);
 
     const currentCategory = categoryId ? iconCategories.find(c => c.id === categoryId) : null;
     const title = currentCategory ? currentCategory.name : "Global Search";
     const placeholder = currentCategory ? `Search in ${currentCategory.name}...` : "Search across all icons...";
 
-    const filteredIcons = useMemo(() => {
+    const allFilteredIcons = useMemo(() => {
         let sourceList = currentCategory
             ? Object.entries(currentCategory.icons).map(([name, Icon]) => ({ name, Icon, categoryId: currentCategory.id }))
             : allIconsFlat;
 
-        if (!searchTerm) return sourceList.slice(0, 200);
-        return sourceList.filter((icon) => icon.name.toLowerCase().includes(searchTerm.toLowerCase())).slice(0, 200);
+        const cleanSearchTerm = searchTerm.trim().replace(/\s+/g, '').toLowerCase();
+
+        if (!cleanSearchTerm) return sourceList;
+
+        return sourceList.filter((icon) => {
+            const cleanIconName = icon.name.toLowerCase();
+            return cleanIconName.includes(cleanSearchTerm);
+        });
     }, [searchTerm, currentCategory]);
+
+    const visibleIcons = allFilteredIcons.slice(0, visibleCount);
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            (entries) => {
+                if (entries[0].isIntersecting && visibleCount < allFilteredIcons.length) {
+                    setVisibleCount((prev) => prev + 100);
+                }
+            },
+            { rootMargin: "400px" }
+        );
+
+        const currentLoader = loaderRef.current;
+        if (currentLoader) observer.observe(currentLoader);
+
+        return () => {
+            if (currentLoader) observer.unobserve(currentLoader);
+        };
+    }, [visibleCount, allFilteredIcons.length]);
 
     return (
         <div className="p-8 md:p-12 max-w-screen-2xl mx-auto min-h-full">
@@ -47,9 +82,9 @@ export default function Gallery() {
             </header>
 
             <div className="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-7 gap-5">
-                {filteredIcons.map(({ name, Icon, categoryId }) => (
+                {visibleIcons.map(({ name, Icon, categoryId }) => (
                     <Link
-                        key={name}
+                        key={`${categoryId}-${name}`}
                         to={`/icon/${categoryId}/${name}`}
                         className="flex flex-col items-center justify-center py-6 md:p-6 bg-white rounded-2xl border border-slate-100 shadow-sm hover:shadow-xl hover:shadow-indigo-500/5 hover:-translate-y-1.5 transition-all duration-300 group"
                     >
@@ -57,13 +92,15 @@ export default function Gallery() {
                             <Icon className="text-5xl text-slate-600 group-hover:text-indigo-600 transition-colors group-hover:scale-110 duration-300" />
                         </div>
                         <span className="text-[11px] font-semibold text-slate-400 group-hover:text-slate-700 truncate w-full text-center mt-2 transition-colors">
-              {name}
-            </span>
+                            {name}
+                        </span>
                     </Link>
                 ))}
             </div>
 
-            {filteredIcons.length === 0 && (
+            <div ref={loaderRef} className="h-10 mt-8 w-full"></div>
+
+            {allFilteredIcons.length === 0 && (
                 <div className="text-center text-slate-400 font-medium mt-20">
                     No icons found matching your criteria.
                 </div>

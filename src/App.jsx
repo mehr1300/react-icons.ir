@@ -91,8 +91,8 @@ function Layout({ children }) {
                 <div onClick={() => setOpen(!open)} className="absolute md:hidden left-5 top-5 w-10 h-10 shrink-0 rounded-xl bg-gradient-to-br cursor-pointer from-indigo-500 to-violet-600 flex items-center justify-center shadow-lg shadow-indigo-500/30 z-30">
                     <FiGrid className="text-white text-xl" />
                 </div>
-                <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-[0.015] pointer-events-none"></div>
-                <div className="p-4 md:p-8">{children}</div>
+                <div className=" absolute inset-0 bg-[url('/2.png')] opacity-[0.315] pointer-events-none"></div>
+                <div className="relative z-10 p-4 md:p-8">{children}</div>
             </main>
         </div>
     );
